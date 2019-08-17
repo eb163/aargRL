@@ -1,0 +1,179 @@
+standard console size is 80 chars wide, 25 chars tall, 80x25=2000 chars total on screen
+default WINDOW first created by initscr() is called stdscr
+
+initscr()
+	-is always the first pdcurses function to be called
+	-determines terminal type
+	-sets up pdcurses data structures
+	-no arguments
+	
+endwin()
+	-deallocates all data, cleans everything up when curses is no longer needed and can be shut down
+
+noecho()
+	-toggles printing char input to screen off
+
+echo()
+	-toggles printing char input to screen on
+
+keypad(WINDOW, bool)
+	-toggles whether getch() receives certain input values from keyboard keys such as arrow keys or Fnum keys
+
+newwin(int height, int width, int y, int x)
+	-creates a new WINDOW adt, with the starting top left corner located at position (y,x)
+	-returns memory address of created WINDOW for being stored in a WINDOW* pointer 
+
+overlay(WINDOW* src, WINDOW* dst)
+	-all text in src is copied into dst
+	-The windows src and dst are not required to be the same size
+	-Those characters in the source window that intersect with characters in the destination window 
+	 are copied to the destination window, so that the characters appear in the same physical position
+	 on the screen.
+	-blanks in src are not copied over into dst
+
+overwrite(WINDOW* src, WINDOW* dst)
+	-all text in src is copied into dst
+	-The windows src and dst are not required to be the same size
+	-Those characters in the source window that intersect with characters in the destination window 
+	 are copied to the destination window, so that the characters appear in the same physical position
+	 on the screen.
+	-blanks in src are copied over into dst
+
+curs_set(int)
+	-controls how the cursor is displayed
+	-takes either 0, 1, 2 as input
+	-0 hides the cursor
+	-1 displays cursor as blinking underscore
+	-2 displays cursor as blinking white space
+	
+refresh()
+	-draws to terminal screen
+	-if any changes have occured since last screen draw, changes are displayed
+
+wrefresh(WINDOW* win)
+	-takes as argument a pointer to a WINDOW (such as stdscr or a client made window)
+	-updates window (displays changes)
+	
+clear()
+	-deletes all chars on stdscr
+
+wclear(WINDOW* win)
+	-takes as argument a pointer to a WINDOW (such as stdscr or a client made window)
+	-clears all characters on that WINDOW
+
+clrtoeol()
+	-clear the screen from the current cursor position to the end of the current line.
+	
+addch(char)
+	-writes char passed as argument at the current cursor location, then moves cursor over 1
+
+waddch(WINDOW* win, char)
+	-behaves as addch() but writes char to Window* win
+	
+addstr(char* pointer)
+	-writes string of chars pointed to by array name or pointer, starting at current cursor location
+	-does not accept strings, will accept calls to string function c_str()
+
+waddstr(WINDOW* win, char* pointer)
+	-behaves as addstr() but writes to WINDOW win
+
+move(int y, int x)
+	-moves cursor to location (x,y). displayed cursor doesn't move until refresh is called
+
+mvaddch(int y, int x, char)
+	-moves cursor to location (x,y), writes char argument at that location, then moves cursor over 1
+
+mvwaddch(WINDOW* win, int y, int x, char)
+	-behaves as mvaddch() but writes to WINDOW win
+	-note that cursor position is based on starting window points, not on stdscr points
+	-ex: a window starting at (y, x) = (10, 30), after executing mvwaddch(5, 5,'A'); will print 'A' at
+		point (15, 35) on the overall console screen
+
+mvaddstr(int y, int x, char* pointer)
+	-moves cursor to location (x,y), then writes string of chars pointed to by array or pointer
+	-does not accept strings, will accept calls to string function c_str()
+
+mvwaddstr(WINDOW* win, int y, int x, char* pointer)
+	-behaves as mvaddstr() but writes to WINDOW win
+	-note that cursor position is based on starting window points, not on stdscr points
+	-ex: a window starting at (y, x) = (10, 30), after executing mvwaddstr(5, 5,'AAA'); will print 'AAA' at
+		point (15, 35) on the overall console screen
+
+mvcur(int oldy, int oldx, int newy, int newx) 
+	-moves the physical cursor without updating any window cursor positions. It returns OK or ERR.
+
+mvhline(int y, int x, char ch, int lgnth)
+	-moves cursor to position and creates a horizontal line of chars of ch, with a length of lgnth
+
+mvhwline(WINDOW* win, int y, int x, char ch, int lgnth)
+	-moves cursor to position in WINDOW win and creates a horizontal line of chars of ch, with a length of lgnth
+
+mvvline(int y, int x, char ch, int lgnth)
+	-moves cursor to position and creates a vertical line of chars of ch, with a length of lgnth
+
+mvvwline(WINDOW* win, int y, int x, char ch, int lgnth)
+	-moves cursor to position in WINDOW win and creates a vertical line of chars of ch, with a length of lgnth
+
+getcurx(WINDOW win)
+getcury(WINDOW win)
+	-returns the x and y coordinates of the physical cursor
+
+getyx(WINDOW* win, int& y, int& x)
+	-returns cursor coordinates, storing them in variables y and x
+
+	
+border(char, char, char, char, char, char, char, char)
+	-draws a border around the terminal window
+	-takes 8 chars as arguments
+	-first 4 chars are border lines made of the inserted char, 1 line per side of terminal
+		-lines are drawn vertical first, horizontal second, from left to right, top to bottom
+	-last 4 chars are characters drawn at the four corners of the terminal
+		-corners are drawn from left to right, top to bottom
+		-top left first, top right second, bottom left third, bottom left fourth
+
+wborder(WINDOW* win, char, char, char, char, char, char, char, char)
+	-behaves as border(), but draws to WINDOW win
+
+getmaxyx(WINDOW, int y, int x)
+	-stores values for maximum y and x values of window in int y and x
+
+start_color()
+	-initializes colors
+
+init_pair(short num, short fg, short bg)
+	-creates a COLOR_PAIR identified by num, with a foreground color of fg, and background color of bg
+	-shorts fg and bg can use the predefined COLOR shorts:
+		COLOR_WHITE
+		COLOR_BLACK
+		COLOR_RED
+		COLOR_BLUE
+		COLOR_GREEN
+		COLOR_YELLOw
+		COLOR_CYAN
+		COLOR_MAGENTA
+
+attron(chtype att)
+	-turns on an attribute identified by the chtype att
+	-attributes include things like color pairs
+	-to draw to screen a char or string with a certain color pair, call attron(COLOR_PAIR(num))
+		where num is the identifier for a previously created color pair using init_pair()
+		before using addch or addstr or mvaddch or mvaddstr or etc
+
+attroff()
+	-turns off the previously turned on attr called by attron()
+	-always call attroff after calling attron to draw a specific color_pair to screen
+	-otherwise all later drawn ch or strings will use the turned on color_pair
+
+getch()
+	-gets input from keyboard, stores as a char, and returns the char input
+	-uses stdscr, stdscr cursor location, and displays stdscr
+
+wgetch(WINDOW* win)
+	-behaves as getch(), but uses win, win cursor, and displays win
+
+getstr()
+	-retrieves a series of chars from keyboard and returns a cstring
+	-uses stdscr, stdscr cursor location, and displays stdscr
+
+wgetstr(WINDOW* win)
+	-behaves as getstr(), but uses win, wn cursor, and displays win
