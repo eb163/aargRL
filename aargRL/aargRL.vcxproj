@@ -118,15 +118,18 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="pdcurses\curseutil.cpp" />
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ColorPairs.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="CoordinatePair.h" />
+    <ClInclude Include="DefaultSettings.h" />
     <ClInclude Include="GraphicData.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="pdcurses\curseutil.h" />
     <ClInclude Include="tests.h" />
     <ClInclude Include="Tile.h" />
   </ItemGroup>
