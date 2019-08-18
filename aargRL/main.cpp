@@ -24,27 +24,33 @@ int main()
 
 	string title = "Aarg, a roguelike!";
 
-	string ngstr = "Start a new game!";
-	string lgstr = "Load a game!";
-	string optstr = "Options";
-	string quitstr = "Quit";
+	//input options
+	char ngchar = 'n';
+	char lgchar = 'l';
+	char optchar = 'o';
+	char qchar = 'q';
+
+	string ngstr = "[" + string(1, ngchar) + "] : Start a new game!";
+	string lgstr = "[" + string(1, lgchar) + "] : Load a game!";
+	string optstr = "[" + string(1, optchar) + "] : Options";
+	string qstr = "[" + string(1, qchar) + "] : Quit";
 
 	WINDOW* mainMenuWin = newwin(DEF_SCR_BOUNDS_Y, DEF_SCR_BOUNDS_X, 0, 0);
 
-	int titleX = (DEF_SCR_BOUNDS_X - title.length()) / 2;
+	int titleX = (DEF_SCR_BOUNDS_X / 2); //- title.length()) / 2;
 	int titleY = (DEF_SCR_BOUNDS_Y / 2);
 
-	int ngstrX = (DEF_SCR_BOUNDS_X - ngstr.length()) / 2;
+	int ngstrX = (DEF_SCR_BOUNDS_X / 2); //- ngstr.length()) / 2;
 	int ngstrY = titleY + 2;
 
-	int lgstrX = (DEF_SCR_BOUNDS_X - lgstr.length()) / 2;
+	int lgstrX = (DEF_SCR_BOUNDS_X / 2); //- lgstr.length()) / 2;
 	int lgstrY = ngstrY + 1;
 
-	int optstrX = (DEF_SCR_BOUNDS_X - optstr.length()) / 2;
+	int optstrX = (DEF_SCR_BOUNDS_X / 2); //- optstr.length()) / 2;
 	int optstrY = lgstrY + 1;
 
-	int quitstrX = (DEF_SCR_BOUNDS_X - quitstr.length()) / 2;
-	int quitstrY = optstrY + 1;
+	int qstrX = (DEF_SCR_BOUNDS_X / 2); //- qstr.length()) / 2;
+	int qstrY = optstrY + 1;
 
 	while (running)
 	{
@@ -56,7 +62,7 @@ int main()
 		mvwaddstr(mainMenuWin, ngstrY, ngstrX, ngstr.c_str());
 		mvwaddstr(mainMenuWin, lgstrY, lgstrX, lgstr.c_str());
 		mvwaddstr(mainMenuWin, optstrY, optstrX, optstr.c_str());
-		mvwaddstr(mainMenuWin, quitstrY, quitstrX, quitstr.c_str());
+		mvwaddstr(mainMenuWin, qstrY, qstrX, qstr.c_str());
 
 		wrefresh(mainMenuWin);
 		overwrite(mainMenuWin, stdscr);
