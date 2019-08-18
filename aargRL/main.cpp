@@ -1,8 +1,37 @@
+#include <string>
+#include <random>
+#include <ctime>
+
 #include "pdcurses/curses.h"
 #include "pdcurses/curseutil.h"
 
 #include "DefaultSettings.h"
 #include "tests.h"
+
+void goodbye()
+{
+	srand(time(0));
+	string msg = "Bye!";
+
+	int msgCount = 4;
+
+	//get a random msg
+	int num = rand() % msgCount;
+
+	switch (num)
+	{
+	case 0: msg += " Thanks for playing!"; break;
+	case 1: msg += " See you next time!"; break;
+	case 2: msg += " Don't be a stranger!"; break;
+	case 3: msg += " Come back soon!"; break;
+	}
+	
+	noecho();
+	curs_set(1);
+	wclear(stdscr);
+	mvwaddstr(stdscr, 1, 1, msg.c_str());
+	getch();
+}
 
 int main()
 {
@@ -14,7 +43,7 @@ int main()
 	//TESTS
 	///////////////////////
 
-	testDefaultColorPairs();
+	//testDefaultColorPairs();
 
 	///////////////////////
 	//MAIN MENU
@@ -29,6 +58,8 @@ int main()
 	char lgchar = 'l';
 	char optchar = 'o';
 	char qchar = 'q';
+
+	char input = ' '; //for user input
 
 	string ngstr = "[" + string(1, ngchar) + "] : Start a new game!";
 	string lgstr = "[" + string(1, lgchar) + "] : Load a game!";
@@ -68,7 +99,29 @@ int main()
 		overwrite(mainMenuWin, stdscr);
 		refresh();
 
-		getch();
+		input = getch();
+
+		//parse input
+		if (input == ngchar)
+		{
+
+		}
+
+		else if (input == lgchar)
+		{
+
+		}
+
+		else if (input == optchar)
+		{
+
+		}
+
+		else if (input == qchar)
+		{
+			running = false;
+			goodbye();
+		}
 	}
 
 	return 0;
