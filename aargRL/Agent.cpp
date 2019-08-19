@@ -43,3 +43,20 @@ string Agent::getDescr()
 {
 	return description;
 }
+
+Pair<int> Agent::getPosition()
+{
+	return coord;
+}
+
+void Agent::setPosition(int y, int x)
+{
+	coord.y = y;
+	coord.x = x;
+}
+
+void Agent::move(int dy, int dx)
+{
+	coord.y += dy;
+	coord.x += dx;
+}

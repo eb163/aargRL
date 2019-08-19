@@ -1,5 +1,17 @@
 #include "Pool.h"
 
+Pool::Pool()
+{
+	current = 0;
+	max = 0;
+}
+
+Pool::Pool(int c, int m)
+{
+	current = c;
+	max = m;
+}
+
 int Pool::getCurrent()
 {
 	return current;

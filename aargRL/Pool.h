@@ -11,6 +11,9 @@ private:
 
 public:
 
+	Pool();
+	Pool(int c, int m);
+
 	int getCurrent();
 	int getMax();
 
