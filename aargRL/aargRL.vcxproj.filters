@@ -36,6 +36,9 @@
     <ClCompile Include="pdcurses\curseutil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PCAgent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicData.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pair.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PCAgent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
