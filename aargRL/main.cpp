@@ -46,6 +46,11 @@ void goodbye()
 	getch();
 }
 
+void game()
+{
+
+}
+
 int main()
 {
 	initscr();
