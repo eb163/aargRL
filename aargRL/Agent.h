@@ -3,10 +3,11 @@
 
 #include "GraphicData.h"
 #include "Pair.h"
+#include "Pool.h"
 
 using std::string;
 
-enum AgentType {};
+enum AgentType {PC = 0, NPC = 1, ENEMY = 2 };
 
 class Agent
 {
@@ -14,6 +15,8 @@ private:
 	AgentType type;
 
 protected:
+	void setType(AgentType t);
+
 	string name;
 	string description;
 	GraphicData* gdata = nullptr; 
@@ -21,14 +24,22 @@ protected:
 	//this is to reduce duplication
 	//multiple orc entities will use the same color pair and glyph, for example, no need to duplicate the graphicsdata
 
-	Pair<int> coord;
 	//for tracking position on map
+	Pair<int> coord;
+
+	//health
+	Pool hp;
+
+	//magicka or mana or spellpower or whatever (TBD)
+	Pool mp;
+
+	//metabolism
+	Pool stomach;
 
 public:
 	Agent();
 	~Agent();
 
-	void setType(AgentType t);
 	AgentType getType();
 
 	void setName(string n);
@@ -36,5 +47,11 @@ public:
 
 	void setDescr(string d);
 	string getDescr();
+
+	Pair<int> getPosition();
+	void setPosition(int y, int x);
+	void move(int dy, int dx);
+
+	bool isAlive();
 };
 

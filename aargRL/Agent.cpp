@@ -60,3 +60,8 @@ void Agent::move(int dy, int dx)
 	coord.y += dy;
 	coord.x += dx;
 }
+
+bool Agent::isAlive()
+{
+	return !(hp.isEmpty());
+}
