@@ -2,7 +2,7 @@
 #include <string>
 
 #include "GraphicData.h"
-#include "CoordinatePair.h"
+#include "Pair.h"
 
 using std::string;
 
@@ -19,7 +19,7 @@ protected:
 
 	GraphicData* gdata = nullptr;
 
-	CoordinatePair<int> coord;
+	Pair<int> coord;
 	//for tracking position on map
 
 public:

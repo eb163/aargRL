@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GraphicData.h"
-#include "CoordinatePair.h"
+#include "Pair.h"
 
 class Tile
 {
@@ -10,7 +10,7 @@ private:
 	bool passable = true;
 	bool transparent = true;
 
-	CoordinatePair<int> coord;
+	Pair<int> coord;
 
 	//will need an inventory for items
 
@@ -26,6 +26,6 @@ public:
 	bool isTransparent();
 
 	void setCoordinates(int y, int x);
-	CoordinatePair<int> getCoordinates();
+	Pair<int> getCoordinates();
 };
 

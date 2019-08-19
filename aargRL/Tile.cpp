@@ -27,7 +27,7 @@ void Tile::setCoordinates(int y, int x)
 	coord.x = x;
 }
 
-CoordinatePair<int> Tile::getCoordinates()
+Pair<int> Tile::getCoordinates()
 {
 	return coord;
 }

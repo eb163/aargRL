@@ -124,7 +124,7 @@
   <ItemGroup>
     <ClInclude Include="ColorPairs.h" />
     <ClInclude Include="Agent.h" />
-    <ClInclude Include="CoordinatePair.h" />
+    <ClInclude Include="Pair.h" />
     <ClInclude Include="DefaultSettings.h" />
     <ClInclude Include="GraphicData.h" />
     <ClInclude Include="Item.h" />

@@ -4,14 +4,14 @@
 #include <exception>
 
 #include "Tile.h"
-#include "CoordinatePair.h"
+#include "Pair.h"
 
 using std::string;
 
 class Map
 {
 private:
-	CoordinatePair<int> bounds;
+	Pair<int> bounds;
 	Tile* tiles = nullptr;
 
 protected:

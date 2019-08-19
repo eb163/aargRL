@@ -1,6 +1,6 @@
 #pragma once
 template<typename t>
-struct CoordinatePair
+struct Pair
 {
 	t x;
 	t y;

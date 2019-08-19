@@ -2,7 +2,7 @@
 #include <string>
 
 #include "GraphicData.h"
-#include "CoordinatePair.h"
+#include "Pair.h"
 
 using std::string;
 
@@ -21,7 +21,7 @@ protected:
 	//this is to reduce duplication
 	//multiple orc entities will use the same color pair and glyph, for example, no need to duplicate the graphicsdata
 
-	CoordinatePair<int> coord;
+	Pair<int> coord;
 	//for tracking position on map
 
 public:
