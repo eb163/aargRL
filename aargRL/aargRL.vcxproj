@@ -120,6 +120,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="PCAgent.cpp" />
     <ClCompile Include="pdcurses\curseutil.cpp" />
+    <ClCompile Include="Pool.cpp" />
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +133,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="PCAgent.h" />
     <ClInclude Include="pdcurses\curseutil.h" />
+    <ClInclude Include="Pool.h" />
     <ClInclude Include="tests.h" />
     <ClInclude Include="Tile.h" />
   </ItemGroup>
