@@ -114,6 +114,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GraphicData.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
@@ -126,6 +127,7 @@
   <ItemGroup>
     <ClInclude Include="ColorPairs.h" />
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="GameData.h" />
     <ClInclude Include="Pair.h" />
     <ClInclude Include="DefaultSettings.h" />
     <ClInclude Include="GraphicData.h" />
