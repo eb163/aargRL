@@ -8,6 +8,18 @@
 #include "DefaultSettings.h"
 #include "tests.h"
 
+void placeholderMsg()
+{
+	noecho();
+	curs_set(1);
+	wclear(stdscr);
+	mvwaddstr(stdscr, 1, 1, "This feature hasn't been added yet!");
+	wrefresh(stdscr);
+
+	getch();
+
+}
+
 void goodbye()
 {
 	srand(time(0));
@@ -30,6 +42,7 @@ void goodbye()
 	curs_set(1);
 	wclear(stdscr);
 	mvwaddstr(stdscr, 1, 1, msg.c_str());
+	wrefresh(stdscr);
 	getch();
 }
 
@@ -104,17 +117,17 @@ int main()
 		//parse input
 		if (input == ngchar)
 		{
-
+			placeholderMsg();
 		}
 
 		else if (input == lgchar)
 		{
-
+			placeholderMsg();
 		}
 
 		else if (input == optchar)
 		{
-
+			placeholderMsg();
 		}
 
 		else if (input == qchar)
