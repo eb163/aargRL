@@ -123,10 +123,13 @@
     <ClCompile Include="pdcurses\curseutil.cpp" />
     <ClCompile Include="Pool.cpp" />
     <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileFloor.cpp" />
+    <ClCompile Include="TileWall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ColorPairs.h" />
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="display.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="Pair.h" />
     <ClInclude Include="DefaultSettings.h" />
@@ -138,6 +141,8 @@
     <ClInclude Include="Pool.h" />
     <ClInclude Include="tests.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileFloor.h" />
+    <ClInclude Include="TileWall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
