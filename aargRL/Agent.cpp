@@ -24,6 +24,16 @@ AgentType Agent::getType()
 	return type;
 }
 
+void Agent::setGraphicData(GraphicData * dptr)
+{
+	gdata = dptr;
+}
+
+GraphicData * Agent::getGraphicData()
+{
+	return gdata;
+}
+
 void Agent::setName(string n)
 {
 	name = n;

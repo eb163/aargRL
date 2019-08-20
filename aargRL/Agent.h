@@ -42,6 +42,9 @@ public:
 
 	AgentType getType();
 
+	void setGraphicData(GraphicData* dptr);
+	GraphicData* getGraphicData();
+
 	void setName(string n);
 	string getName();
 
