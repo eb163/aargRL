@@ -29,6 +29,9 @@ public:
 	void setType(ItemType t);
 	ItemType getType();
 
+	void setGraphicData(GraphicData* dptr);
+	GraphicData* getGraphicData();
+
 	void setName(string n);
 	string getName();
 

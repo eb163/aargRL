@@ -24,6 +24,16 @@ ItemType Item::getType()
 	return type;
 }
 
+void Item::setGraphicData(GraphicData * dptr)
+{
+	gdata = dptr;
+}
+
+GraphicData* Item::getGraphicData()
+{
+	return gdata;
+}
+
 void Item::setName(string n)
 {
 	name = n;
