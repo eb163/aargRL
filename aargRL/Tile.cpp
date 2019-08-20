@@ -11,6 +11,16 @@ Tile::~Tile()
 
 }
 
+TileType Tile::getType()
+{
+	return type;
+}
+
+void Tile::setType(TileType t)
+{
+	type = t;
+}
+
 void Tile::setGraphicData(GraphicData * dptr)
 {
 	gdata = dptr;
