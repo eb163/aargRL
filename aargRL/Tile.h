@@ -21,6 +21,9 @@ public:
 	Tile();
 	~Tile();
 
+	void setGraphicData(GraphicData* dptr);
+	GraphicData* getGraphicData();
+
 	bool isPassable();
 	//bool isBlocked();		//TBD
 	bool isTransparent();

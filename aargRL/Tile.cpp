@@ -11,6 +11,16 @@ Tile::~Tile()
 
 }
 
+void Tile::setGraphicData(GraphicData * dptr)
+{
+	gdata = dptr;
+}
+
+GraphicData * Tile::getGraphicData()
+{
+	return gdata;
+}
+
 bool Tile::isPassable()
 {
 	return passable;
