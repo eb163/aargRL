@@ -127,6 +127,7 @@
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileFloor.cpp" />
     <ClCompile Include="TileWall.cpp" />
+    <ClCompile Include="TileWater.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ColorPairs.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileFloor.h" />
     <ClInclude Include="TileWall.h" />
+    <ClInclude Include="TileWater.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
