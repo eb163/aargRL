@@ -21,9 +21,6 @@ protected:
 	string name;
 	string description;
 	GraphicData gdata; 
-	//agents will reference a single universal instance of a graphicsdata object
-	//this is to reduce duplication
-	//multiple orc entities will use the same color pair and glyph, for example, no need to duplicate the graphicsdata
 
 	//for tracking position on map
 	Pair<int> coord;
