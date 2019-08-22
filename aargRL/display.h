@@ -1,6 +1,9 @@
 #pragma once
+#include <vector>
 #include "pdcurses/curses.h"
 #include "pdcurses/curseutil.h"
+#include "Pair.h"
+#include "GraphicData.h"
 #include "Map.h"
 #include "PCAgent.h"
 
@@ -24,6 +27,36 @@ void drawmap(WINDOW* scr, Map* map)
 		}
 	}
 	wrefresh(scr);
+}
+
+//drawing agents and items to scr requires knowing what region of the map is currently displayed on screen
+//currently assuming the whole map is the size of the region of the dusplay dedicated to displaying the map
+void drawagents(WINDOW* scr, vector<Agent*> agents)
+{
+	if (agents.empty() == false)
+	{
+		int size = agents.size();
+		for (int i = 0; i < size; ++i)
+		{
+			Pair<int> coord = agents.at(i)->getPosition();
+			GraphicData gd = agents.at(i)->getGraphicData();
+			mvwprintcolorch(scr, coord.y, coord.x, gd.getGlyph(), gd.getColorPair());
+		}
+	}
+}
+
+void drawitems(WINDOW* scr, vector<Item*> items)
+{
+	if (items.empty() == false)
+	{
+		int size = items.size();
+		for (int i = 0; i < size; ++i)
+		{
+			Pair<int> coord = items.at(i)->getPosition();
+			GraphicData gd = items.at(i)->getGraphicData();
+			mvwprintcolorch(scr, coord.y, coord.x, gd.getGlyph(), gd.getColorPair());
+		}
+	}
 }
 
 //writes to the passed curses window the data of the passed PCAgent
@@ -53,8 +86,3 @@ void drawhud(WINDOW* scr, PCAgent* pc)
 
 	wrefresh(scr);
 }
-
-//drawing agents and items to scr requires knowing what region of the map is currently displayed on screen
-//void drawagents
-
-//void drawitems
