@@ -4,6 +4,7 @@
 #include "GraphicData.h"
 #include "Pair.h"
 #include "Pool.h"
+#include "Inventory.h"
 
 using std::string;
 
@@ -35,6 +36,9 @@ protected:
 
 	//metabolism
 	Pool stomach;
+
+	//inventory
+	Inventory items;
 
 public:
 	Agent();
