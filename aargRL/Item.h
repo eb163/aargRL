@@ -22,6 +22,8 @@ protected:
 	Pair<int> coord;
 	//for tracking position on map
 
+	int weight;
+
 public:
 	Item();
 	~Item();

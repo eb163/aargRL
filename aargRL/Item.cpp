@@ -7,6 +7,7 @@ Item::Item()
 	gdata.setGlyph('i');
 	gdata.setColorPair(COLOR_WHITE);
 	coord = { 0, 0 };
+	weight = 0;
 }
 
 
