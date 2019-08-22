@@ -126,6 +126,7 @@
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileFloor.cpp" />
+    <ClCompile Include="TileLava.cpp" />
     <ClCompile Include="TileWall.cpp" />
     <ClCompile Include="TileWater.cpp" />
   </ItemGroup>
@@ -147,6 +148,7 @@
     <ClInclude Include="tests.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileFloor.h" />
+    <ClInclude Include="TileLava.h" />
     <ClInclude Include="TileWall.h" />
     <ClInclude Include="TileWater.h" />
   </ItemGroup>

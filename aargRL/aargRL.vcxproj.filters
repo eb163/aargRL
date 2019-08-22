@@ -60,6 +60,9 @@
     <ClCompile Include="TileWater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TileLava.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicData.h">
@@ -117,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TileWater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileLava.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
