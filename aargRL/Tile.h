@@ -1,15 +1,21 @@
 #pragma once
 
+#include <string>
 #include "GraphicData.h"
 #include "Pair.h"
 
 enum TileType {FLOOR = 0, WALL = 1, DOOR = 2, WATER = 3, LAVA = 4};
 
+using std::string;
+
 class Tile
 {
 private:
+
 	TileType type;
 	GraphicData gdata;
+	string name;
+	string description;
 
 	Pair<int> coord;
 
@@ -28,6 +34,12 @@ public:
 
 	void setGraphicData(char ch, int color_pair);
 	GraphicData getGraphicData();
+
+	void setName(string n);
+	string getName();
+	
+	void setDescr(string d);
+	string getDescr();
 
 	bool isPassable();
 	//bool isBlocked();		//TBD

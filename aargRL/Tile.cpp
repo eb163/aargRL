@@ -32,6 +32,26 @@ GraphicData Tile::getGraphicData()
 	return gdata;
 }
 
+void Tile::setName(string n)
+{
+	name = n;
+}
+
+string Tile::getName()
+{
+	return name;
+}
+
+void Tile::setDescr(string d)
+{
+	description = d;
+}
+
+string Tile::getDescr()
+{
+	return description;
+}
+
 bool Tile::isPassable()
 {
 	return passable;
