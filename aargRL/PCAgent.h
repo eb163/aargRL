@@ -12,7 +12,7 @@ protected:
 	/*
 	string name;
 	string description;
-	GraphicData* gdata = nullptr; 
+	GraphicData gdata; 
 	Pair<int> coord; 	//for tracking position on map
 	Pool hp; //health
 	Pool mp; //magicka or mana or spellpower or whatever (TBD)
@@ -25,6 +25,11 @@ public:
 
 	//inherited:
 	/*
+	AgentType getType();
+
+	void setGraphicData(char ch, int color);
+	GraphicData getGraphicData();
+
 	void setName(string n);
 	string getName();
 

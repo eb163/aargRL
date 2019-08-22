@@ -3,7 +3,7 @@
 TileWall::TileWall()
 {
 	setType(TileType::WALL);
-	setGraphicData(new GraphicData('#', COLOR_WHITE));
+	setGraphicData('#', COLOR_WHITE);
 	passable = false;
 	transparent = false;
 }

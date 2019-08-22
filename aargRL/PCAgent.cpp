@@ -5,7 +5,8 @@ PCAgent::PCAgent()
 	setType(AgentType::PC);
 	setName("Player");
 	setDescr("The daring hero of our story!");
-	gdata = new GraphicData('@', COLOR_WHITE);
+	gdata.setGlyph('@');
+	gdata.setColorPair(COLOR_WHITE);
 	coord.x = 0; coord.y = 0;
 
 	hp.setMax(100); //placeholder arbitrary value

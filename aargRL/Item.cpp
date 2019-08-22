@@ -4,7 +4,7 @@ Item::Item()
 {
 	name = "Abstract Item";
 	description = "An undefined abstract item entity. You should not be seeing this description.";
-	gdata.setGlyph(i);
+	gdata.setGlyph('i');
 	gdata.setColorPair(COLOR_WHITE);
 	coord = { 0, 0 };
 }
