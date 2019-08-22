@@ -48,8 +48,14 @@ void goodbye()
 
 void game()
 {
-
-}
+	//initialize gamedata
+	//load pcagent into gamedata
+	//generate or load map data
+	//generate or load item data
+	//generate or load NPCAgents and/or EnemyAgents
+	//start game loop
+	//loop runs while the PlayerAgent is alive and the Player does not input commands to Save or Quit
+} 
 
 int main()
 {
@@ -62,6 +68,13 @@ int main()
 	///////////////////////
 
 	//testDefaultColorPairs();
+	Map map(DEF_SCR_BOUNDS_Y, DEF_SCR_BOUNDS_X);
+	map.generate();
+	unitTestMap(stdscr, &map);
+
+	WINDOW* hudscr = newwin(HUD_SCR_BOUNDS_Y, HUD_SCR_BOUNDS_X, 0, 0);
+	PCAgent pctest;
+	unitTestHud(hudscr, &pctest);
 
 	///////////////////////
 	//MAIN MENU

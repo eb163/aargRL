@@ -55,6 +55,10 @@ public:
 	void setPosition(int y, int x);
 	void move(int dy, int dx);
 
+	Pool getHP();
+
+	Pool getMP();
+
 	bool isAlive();
 };
 

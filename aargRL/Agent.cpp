@@ -71,6 +71,17 @@ void Agent::move(int dy, int dx)
 	coord.x += dx;
 }
 
+Pool Agent::getHP()
+{
+	return hp;
+}
+
+Pool Agent::getMP()
+{
+	return mp;
+}
+
+
 bool Agent::isAlive()
 {
 	return !(hp.isEmpty());

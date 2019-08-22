@@ -5,6 +5,8 @@
 #include "pdcurses/curseutil.h"
 
 #include "DefaultSettings.h"
+#include "display.h"
+#include "Map.h"
 
 //various methods for testing code
 
@@ -40,5 +42,31 @@ void testDefaultColorPairs()
 		wrefresh(stdscr);
 
 		getch();
+	}
+}
+
+void unitTestMap(WINDOW* scr, Map* map)
+{
+	char input = ' ';
+	while (input != 'q' && input != 'Q')
+	{
+		drawmap(scr, map);
+		wrefresh(scr);
+		overwrite(scr, stdscr);
+		refresh();
+		input = getch();
+	}
+}
+
+void unitTestHud(WINDOW* hudscr, PCAgent* pc)
+{
+	char input = ' ';
+	while (input != 'q' && input != 'Q')
+	{
+		drawhud(hudscr, pc);
+		wrefresh(hudscr);
+		overwrite(hudscr, stdscr);
+		refresh();
+		input = getch();
 	}
 }
