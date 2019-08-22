@@ -3,6 +3,7 @@
 #include <string>
 #include "GraphicData.h"
 #include "Pair.h"
+#include "Inventory.h"
 
 enum TileType {FLOOR = 0, WALL = 1, DOOR = 2, WATER = 3, LAVA = 4};
 
@@ -19,7 +20,7 @@ private:
 
 	Pair<int> coord;
 
-	//will need an inventory for items
+	Inventory items;
 
 protected:
 	bool passable;
