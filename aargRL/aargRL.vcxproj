@@ -122,6 +122,7 @@
     <ClCompile Include="PCAgent.cpp" />
     <ClCompile Include="pdcurses\curseutil.cpp" />
     <ClCompile Include="Pool.cpp" />
+    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileFloor.cpp" />
     <ClCompile Include="TileWall.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="PCAgent.h" />
     <ClInclude Include="pdcurses\curseutil.h" />
     <ClInclude Include="Pool.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="tests.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileFloor.h" />
