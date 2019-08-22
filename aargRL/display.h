@@ -7,6 +7,8 @@
 //writes to the passed curses window the graphics of the tiles of the passed map pointer
 void drawmap(WINDOW* scr, Map* map)
 {
+	noecho();
+	curs_set(0);
 	//precondition: map size is equal to or smaller than window size
 	int mapsize = map->getTotalTiles();
 	int rows = map->getBounds().y;
@@ -16,8 +18,8 @@ void drawmap(WINDOW* scr, Map* map)
 	{
 		for (int x = 0; x < columns; ++x)
 		{
-			char ch = map->getTile(y, x).getGraphicData()->getGlyph();
-			int color = map->getTile(y, x).getGraphicData()->getColorPair();
+			char ch = map->getTile(y, x).getGraphicData().getGlyph();
+			int color = map->getTile(y, x).getGraphicData().getColorPair();
 			mvwprintcolorch(scr, y, x, ch, color);
 		}
 	}
@@ -27,6 +29,8 @@ void drawmap(WINDOW* scr, Map* map)
 //writes to the passed curses window the data of the passed PCAgent
 void drawhud(WINDOW* scr, PCAgent* pc)
 {
+	noecho();
+	curs_set(0);
 	wclear(scr);
 	//pc data to display
 	//name

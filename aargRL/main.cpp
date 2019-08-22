@@ -68,7 +68,7 @@ int main()
 	///////////////////////
 
 	//testDefaultColorPairs();
-	Map map(DEF_SCR_BOUNDS_Y, DEF_SCR_BOUNDS_X);
+	Map map(MAP_SCR_BOUNDS_Y, MAP_SCR_BOUNDS_X);
 	map.generate();
 	unitTestMap(stdscr, &map);
 
@@ -99,7 +99,7 @@ int main()
 
 	WINDOW* mainMenuWin = newwin(DEF_SCR_BOUNDS_Y, DEF_SCR_BOUNDS_X, 0, 0);
 
-	int titleX = (DEF_SCR_BOUNDS_X / 2); //- title.length()) / 2;
+	int titleX = (DEF_SCR_BOUNDS_X / 2); // -title.length()) / 2;
 	int titleY = (DEF_SCR_BOUNDS_Y / 2);
 
 	int ngstrX = (DEF_SCR_BOUNDS_X / 2); //- ngstr.length()) / 2;
