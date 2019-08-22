@@ -9,7 +9,7 @@ class Tile
 {
 private:
 	TileType type;
-	GraphicData* gdata = nullptr;
+	GraphicData gdata;
 
 	Pair<int> coord;
 
@@ -26,8 +26,8 @@ public:
 	TileType getType();
 	void setType(TileType t);
 
-	void setGraphicData(GraphicData* dptr);
-	GraphicData* getGraphicData();
+	void setGraphicData(char ch, int color_pair);
+	GraphicData getGraphicData();
 
 	bool isPassable();
 	//bool isBlocked();		//TBD

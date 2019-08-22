@@ -4,7 +4,8 @@ Item::Item()
 {
 	name = "Abstract Item";
 	description = "An undefined abstract item entity. You should not be seeing this description.";
-	gdata = nullptr;
+	gdata.setGlyph(i);
+	gdata.setColorPair(COLOR_WHITE);
 	coord = { 0, 0 };
 }
 
@@ -24,12 +25,13 @@ ItemType Item::getType()
 	return type;
 }
 
-void Item::setGraphicData(GraphicData * dptr)
+void Item::setGraphicData(char ch, int color_pair)
 {
-	gdata = dptr;
+	gdata.setGlyph(ch);
+	gdata.setColorPair(color_pair);
 }
 
-GraphicData* Item::getGraphicData()
+GraphicData Item::getGraphicData()
 {
 	return gdata;
 }

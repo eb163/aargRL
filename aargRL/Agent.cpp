@@ -4,7 +4,8 @@ Agent::Agent()
 {
 	name = "Abstract Agent";
 	description = "An undefined abstract agent entity. You should not be seeing this description.";
-	gdata = nullptr;
+	gdata.setGlyph('A');
+	gdata.setColorPair(COLOR_WHITE);
 	coord = {0, 0};
 }
 
@@ -24,12 +25,13 @@ AgentType Agent::getType()
 	return type;
 }
 
-void Agent::setGraphicData(GraphicData * dptr)
+void Agent::setGraphicData(char ch, int color_pair)
 {
-	gdata = dptr;
+	gdata.setGlyph(ch);
+	gdata.setColorPair(color_pair);
 }
 
-GraphicData * Agent::getGraphicData()
+GraphicData Agent::getGraphicData()
 {
 	return gdata;
 }

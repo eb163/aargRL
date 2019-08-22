@@ -17,7 +17,7 @@ protected:
 	string name;
 	string description;
 
-	GraphicData* gdata = nullptr;
+	GraphicData gdata;
 
 	Pair<int> coord;
 	//for tracking position on map
@@ -29,8 +29,8 @@ public:
 	void setType(ItemType t);
 	ItemType getType();
 
-	void setGraphicData(GraphicData* dptr);
-	GraphicData* getGraphicData();
+	void setGraphicData(char ch, int color_pair);
+	GraphicData getGraphicData();
 
 	void setName(string n);
 	string getName();

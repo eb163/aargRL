@@ -19,7 +19,7 @@ protected:
 
 	string name;
 	string description;
-	GraphicData* gdata = nullptr; 
+	GraphicData gdata; 
 	//agents will reference a single universal instance of a graphicsdata object
 	//this is to reduce duplication
 	//multiple orc entities will use the same color pair and glyph, for example, no need to duplicate the graphicsdata
@@ -42,8 +42,8 @@ public:
 
 	AgentType getType();
 
-	void setGraphicData(GraphicData* dptr);
-	GraphicData* getGraphicData();
+	void setGraphicData(char ch, int color);
+	GraphicData getGraphicData();
 
 	void setName(string n);
 	string getName();

@@ -21,12 +21,13 @@ void Tile::setType(TileType t)
 	type = t;
 }
 
-void Tile::setGraphicData(GraphicData * dptr)
+void Tile::setGraphicData(char ch, int color_pair)
 {
-	gdata = dptr;
+	gdata.setGlyph(ch);
+	gdata.setColorPair(color_pair);
 }
 
-GraphicData * Tile::getGraphicData()
+GraphicData Tile::getGraphicData()
 {
 	return gdata;
 }
