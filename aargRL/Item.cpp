@@ -56,3 +56,14 @@ string Item::getDescr()
 {
 	return description;
 }
+
+void Item::setPosition(int y, int x)
+{
+	coord.y = y;
+	coord.x = x;
+}
+
+Pair<int> Item::getPosition()
+{
+	return coord;
+}

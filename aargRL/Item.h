@@ -40,5 +40,8 @@ public:
 	void setDescr(string d);
 	string getDescr();
 
+	void setPosition(int y, int x);
+	Pair<int> getPosition();
+
 };
 
