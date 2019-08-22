@@ -45,6 +45,32 @@ void testDefaultColorPairs()
 	}
 }
 
+void unitTestDrawAgents(WINDOW* scr, vector<Agent*> agents)
+{
+	char input = ' ';
+	while (input != 'q' && input != 'Q')
+	{
+		drawagents(scr, agents);
+		wrefresh(scr);
+		overwrite(scr, stdscr);
+		refresh();
+		input = getch();
+	}
+}
+
+void unitTestDrawItems(WINDOW* scr, vector<Item*> items)
+{
+	char input = ' ';
+	while (input != 'q' && input != 'Q')
+	{
+		drawitems(scr, items);
+		wrefresh(scr);
+		overwrite(scr, stdscr);
+		refresh();
+		input = getch();
+	}
+}
+
 void unitTestMap(WINDOW* scr, Map* map)
 {
 	char input = ' ';

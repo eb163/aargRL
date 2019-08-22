@@ -72,6 +72,14 @@ int main()
 	map.generate();
 	unitTestMap(stdscr, &map);
 
+	vector<Agent*> testagents;
+	testagents.push_back(new Agent());
+	unitTestDrawAgents(stdscr, testagents);
+
+	vector<Item*> testitems;
+	testitems.push_back(new Item());
+	unitTestDrawItems(stdscr, testitems);
+
 	WINDOW* hudscr = newwin(HUD_SCR_BOUNDS_Y, HUD_SCR_BOUNDS_X, 0, 0);
 	PCAgent pctest;
 	unitTestHud(hudscr, &pctest);
