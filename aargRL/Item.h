@@ -6,12 +6,12 @@
 
 using std::string;
 
-enum ItemType {};
+enum ItemType {CONSUMABLE = 0};
 
 class Item
 {
 private:
-	ItemType type;
+	ItemType itemtype;
 
 protected:
 	string name;
@@ -28,8 +28,8 @@ public:
 	Item();
 	~Item();
 
-	void setType(ItemType t);
-	ItemType getType();
+	void setItemType(ItemType t);
+	ItemType getItemType();
 
 	void setGraphicData(char ch, int color_pair);
 	GraphicData getGraphicData();

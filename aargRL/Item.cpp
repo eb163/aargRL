@@ -16,14 +16,14 @@ Item::~Item()
 
 }
 
-void Item::setType(ItemType t)
+void Item::setItemType(ItemType t)
 {
-	type = t;
+	itemtype = t;
 }
 
-ItemType Item::getType()
+ItemType Item::getItemType()
 {
-	return type;
+	return itemtype;
 }
 
 void Item::setGraphicData(char ch, int color_pair)
