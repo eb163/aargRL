@@ -21,11 +21,9 @@ void Food::setNutrition(int n)
 	nutrition = n;
 }
 
-void Food::randomize()
+void Food::makeFood(FoodType type)
 {
-	int num = rand() % totalFoodTypes;
-
-	switch (num)
+	switch (type)
 	{
 	case BREAD:
 		setName("hardtack");
@@ -51,4 +49,12 @@ void Food::randomize()
 		setGraphicData('%', COLOR_YELLOW);
 		break;
 	}
+}
+
+void Food::randomize()
+{
+	int num = rand() % totalFoodTypes;
+	FoodType ftype = FoodType(num);
+
+	makeFood(ftype);
 }
