@@ -67,3 +67,13 @@ Pair<int> Item::getPosition()
 {
 	return coord;
 }
+
+void Item::setWeight(int n)
+{
+	weight = n;
+}
+
+int Item::getWeight()
+{
+	return weight;
+}

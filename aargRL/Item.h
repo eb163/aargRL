@@ -43,5 +43,8 @@ public:
 	void setPosition(int y, int x);
 	Pair<int> getPosition();
 
+	void setWeight(int n);
+	int getWeight();
+
 };
 
