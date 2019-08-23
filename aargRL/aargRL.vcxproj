@@ -114,6 +114,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="Consumable.cpp" />
+    <ClCompile Include="Food.cpp" />
     <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GraphicData.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -133,7 +135,9 @@
   <ItemGroup>
     <ClInclude Include="ColorPairs.h" />
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="Consumable.h" />
     <ClInclude Include="display.h" />
+    <ClInclude Include="Food.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Pair.h" />
