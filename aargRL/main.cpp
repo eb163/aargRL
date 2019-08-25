@@ -84,6 +84,8 @@ int main()
 	PCAgent pctest;
 	unitTestHud(hudscr, &pctest);
 
+	inputTest(stdscr);
+
 	///////////////////////
 	//MAIN MENU
 	//////////////////////

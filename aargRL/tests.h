@@ -96,3 +96,19 @@ void unitTestHud(WINDOW* hudscr, PCAgent* pc)
 		input = getch();
 	}
 }
+
+void inputTest(WINDOW* scr)
+{
+	keypad(scr, true);
+	noecho();
+	char input = ' ';
+	string output = "Last input char: ";
+	while (input != 'Q')
+	{
+		wclear(scr);
+		mvwaddstr(scr, 1, 1, "Testing key inputs! (Press Shift + Q to quit)");
+		mvwaddstr(scr, 2, 1, output.c_str());
+		waddch(scr, input);
+		input = getch();
+	}
+}
