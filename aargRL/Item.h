@@ -14,6 +14,8 @@ private:
 	ItemType itemtype;
 
 protected:
+	void setItemType(ItemType t);
+
 	string name;
 	string description;
 
@@ -28,7 +30,6 @@ public:
 	Item();
 	~Item();
 
-	void setItemType(ItemType t);
 	ItemType getItemType();
 
 	void setGraphicData(char ch, int color_pair);
