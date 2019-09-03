@@ -2,6 +2,7 @@
 
 GameData::GameData()
 {
+	running = true;
 	rngSeed = time(0);
 	pcptr = nullptr;
 	turnCount = 0;
@@ -12,6 +13,16 @@ GameData::GameData()
 GameData::~GameData()
 {
 
+}
+
+bool GameData::isRunning()
+{
+	return running;
+}
+
+void GameData::close()
+{
+	running = false;
 }
 
 void GameData::setTurnCount(int t)
@@ -57,4 +68,16 @@ void GameData::setPC(PCAgent * ptr)
 PCAgent * GameData::getPC()
 {
 	return pcptr;
+}
+
+void GameData::save()
+{
+	//empty sstub for now
+	//TODO
+}
+
+void GameData::load()
+{
+	//empty stub for now
+	//TODO
 }
