@@ -32,7 +32,15 @@ Input parseCharToInput(char inputCh)
 {
 	Input signal = UNDEF;
 	//currently defining "default" controls which use numpad for movement
-	if (inputCh == '5')
+	if (inputCh == 'S')
+	{
+		signal = SAVE_AND_Q;
+	}
+	else if (inputCh == 'Q')
+	{
+		signal = Q_WO_SAVE;
+	}
+	else if (inputCh == '5')
 	{
 		signal = WAIT;
 	}
@@ -42,31 +50,31 @@ Input parseCharToInput(char inputCh)
 	}
 	else if (inputCh == '2')
 	{
-		signal == MOVE_SOUTH;
+		signal = MOVE_SOUTH;
 	}
 	else if (inputCh == '3')
 	{
-		signal == MOVE_SOUTHEAST;
+		signal = MOVE_SOUTHEAST;
 	}
 	else if (inputCh == '4')
 	{
-		signal == MOVE_WEST;
+		signal = MOVE_WEST;
 	}
 	else if (inputCh == '6')
 	{
-		signal == MOVE_EAST;
+		signal = MOVE_EAST;
 	}
 	else if (inputCh == '7')
 	{
-		signal == MOVE_NORTHWEST;
+		signal = MOVE_NORTHWEST;
 	}
 	else if (inputCh == '8')
 	{
-		signal == MOVE_NORTH;
+		signal = MOVE_NORTH;
 	}
 	else if (inputCh == '9')
 	{
-		signal == MOVE_NORTHEAST;
+		signal = MOVE_NORTHEAST;
 	}
 
 	return signal;
