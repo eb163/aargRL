@@ -5,10 +5,8 @@
 #include "pdcurses/curses.h"
 #include "pdcurses/curseutil.h"
 
-#include "Input.h"
-#include "GameData.h"
-#include "DefaultSettings.h"
 #include "tests.h"
+#include "game.h"
 
 void goodbye()
 {
@@ -129,12 +127,14 @@ int main()
 		if (input == ngchar)
 		{
 			//start a new game
-			game();
+			newgame();
 		}
 
 		else if (input == lgchar)
 		{
 			placeholderMsg();
+			//load gamedata from a file to a gamedata obj
+			//start game loop with the gamedata
 		}
 
 		else if (input == optchar)
