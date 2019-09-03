@@ -12,6 +12,17 @@
 
 using std::string;
 
+void placeholderMsg()
+{
+	noecho();
+	curs_set(1);
+	wclear(stdscr);
+	mvwaddstr(stdscr, 1, 1, "This feature hasn't been added yet!");
+	wrefresh(stdscr);
+
+	getch();
+}
+
 void testDefaultColorPairs()
 {
 	//precondition: colors have been initiated
@@ -111,4 +122,19 @@ void inputTest(WINDOW* scr)
 		waddch(scr, input);
 		input = getch();
 	}
+}
+
+void unitTestMsgLog(WINDOW* logscr, MessageLog* log)
+{
+	int msgCounter = 0;
+	int maxMsgs = logscr->_maxy + 1;
+	string strTemplate = "Message #";
+	string msg;
+	do
+	{
+		msg = strTemplate + to_string(msgCounter + 1);
+		log->addMsg(msg, COLOR_WHITE);
+		++msgCounter;
+		drawmsglog(logscr, log);
+	} while (msgCounter < maxMsgs);
 }

@@ -10,17 +10,6 @@
 #include "DefaultSettings.h"
 #include "tests.h"
 
-void placeholderMsg()
-{
-	noecho();
-	curs_set(1);
-	wclear(stdscr);
-	mvwaddstr(stdscr, 1, 1, "This feature hasn't been added yet!");
-	wrefresh(stdscr);
-
-	getch();
-}
-
 void goodbye()
 {
 	srand(time(0));
