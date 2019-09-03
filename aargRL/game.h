@@ -68,15 +68,23 @@ void parseInput(Input signal, GameData& game)
 	}
 }
 
-void game()
+void newgame()
 {
 	//initialize gamedata
 	GameData gamedata;
-	//load pcagent into gamedata
-	//generate or load map data
-	//generate or load item data
-	//generate or load NPCAgents and/or EnemyAgents
+
+	//create a new character
+
+	//initialize the map, items, agents, etc
+
 	//start game loop
+	game(gamedata);
+}
+
+
+void game(GameData gamedata)
+{
+	//start game loop using passed gamedata
 	char inputch = ' ';
 	Input input = UNDEF;
 	while (gamedata.isRunning())
@@ -90,10 +98,3 @@ void game()
 	}
 	//loop runs while the PlayerAgent is alive and the Player does not input commands to Save or Quit
 }
-
-/*
-void game(GameData gamedata)
-{
-
-}
-*/
