@@ -140,6 +140,7 @@
     <ClInclude Include="Consumable.h" />
     <ClInclude Include="display.h" />
     <ClInclude Include="Food.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
