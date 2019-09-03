@@ -122,6 +122,8 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Message.cpp" />
+    <ClCompile Include="MessageLog.cpp" />
     <ClCompile Include="PCAgent.cpp" />
     <ClCompile Include="pdcurses\curseutil.cpp" />
     <ClCompile Include="Pool.cpp" />
@@ -139,7 +141,10 @@
     <ClInclude Include="display.h" />
     <ClInclude Include="Food.h" />
     <ClInclude Include="GameData.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="Message.h" />
+    <ClInclude Include="MessageLog.h" />
     <ClInclude Include="Pair.h" />
     <ClInclude Include="DefaultSettings.h" />
     <ClInclude Include="GraphicData.h" />
