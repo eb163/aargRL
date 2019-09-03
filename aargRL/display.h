@@ -30,6 +30,17 @@ void drawmap(WINDOW* scr, Map* map)
 	wrefresh(scr);
 }
 
+void drawpc(WINDOW* scr, PCAgent* pc)
+{
+	noecho();
+	curs_set(1);
+
+	GraphicData gd = pc->getGraphicData();
+	Pair<int> coord = pc->getPosition();
+	mvwprintcolorch(scr, coord.y, coord.x, gd.getGlyph(), gd.getColorPair());
+	move(coord.y, coord.x);
+}
+
 //drawing agents and items to scr requires knowing what region of the map is currently displayed on screen
 //currently assuming the whole map is the size of the region of the dusplay dedicated to displaying the map
 void drawagents(WINDOW* scr, vector<Agent*> agents)
