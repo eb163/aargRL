@@ -5,6 +5,7 @@
 #include "Pair.h"
 #include "GraphicData.h"
 #include "Map.h"
+#include "MessageLog.h"
 #include "PCAgent.h"
 
 //writes to the passed curses window the graphics of the tiles of the passed map pointer
@@ -85,4 +86,15 @@ void drawhud(WINDOW* scr, PCAgent* pc)
 	//status bar (TBD)
 
 	wrefresh(scr);
+}
+
+void drawmsglog(WINDOW* scr, MessageLog* log)
+{
+	//draw the contents of the message log to the messagelog display screen
+}
+
+void drawnewmsg()
+{
+	//draw the most recent mesage to the game screen for user to view
+
 }
