@@ -55,7 +55,14 @@ void game()
 	//generate or load NPCAgents and/or EnemyAgents
 	//start game loop
 	//loop runs while the PlayerAgent is alive and the Player does not input commands to Save or Quit
-} 
+}
+
+/*
+void game(GameData gamedata)
+{
+
+}
+*/
 
 int main()
 {
@@ -83,6 +90,10 @@ int main()
 	WINDOW* hudscr = newwin(HUD_SCR_BOUNDS_Y, HUD_SCR_BOUNDS_X, 0, 0);
 	PCAgent pctest;
 	unitTestHud(hudscr, &pctest);
+
+	WINDOW* logscr = newwin(HUD_SCR_BOUNDS_Y, HUD_SCR_BOUNDS_X / 2, 0, 0);
+	MessageLog log;
+	unitTestMsgLog(logscr, &log);
 
 	inputTest(stdscr);
 
